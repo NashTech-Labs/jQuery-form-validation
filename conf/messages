@@ -1,0 +1,10 @@
+required=Required
+password=Password
+confPassword=Confirm Password
+minlength=Min Length
+maxlength=Max Length
+rangelength=Range Length
+creditcard=Credit Card
+remote=Remote
+email=Email
+url=URL

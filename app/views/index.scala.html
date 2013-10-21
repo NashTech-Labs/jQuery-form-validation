@@ -1,20 +1,42 @@
-@(message: String)
+@(active: String, textValidationForm: Form[(String, String, String, String, String, String, String, String, String, String)])(implicit flash: Flash)
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
 
 @main("jQuery Form Validation") {
-	<div class="panel panel-info">
+	<div class="panel panel-success">
 		<div class="panel-heading">
 			<h3 class="panel-title">Form</h3>
 		</div>
 		<div class="panel-body">
 			<div class="row">
-				<div class="col-lg-6">
-					<div class="well">
-						@message
+				<div class="col-lg-8">
+					<div class="well form-horizontal">
+						@helper.form(routes.Application.handleTextForm) {
+							<fieldset>
+								@inputText(textValidationForm("required"), args = 'class -> "form-control")
+								@inputPassword(textValidationForm("password"), args = 'class -> "form-control")
+								@inputPassword(textValidationForm("confPassword"), args = 'class -> "form-control")
+								@inputText(textValidationForm("minlength"), args = 'class -> "form-control")
+								@inputText(textValidationForm("maxlength"), args = 'class -> "form-control")
+								@inputText(textValidationForm("rangelength"), args = 'class -> "form-control")
+								@inputText(textValidationForm("creditcard"), args = 'class -> "form-control")
+								@inputText(textValidationForm("remote"), args = 'class -> "form-control")
+								@inputText(textValidationForm("email"), args = 'class -> "form-control")
+								@inputText(textValidationForm("url"), args = 'class -> "form-control")
+							</fieldset>
+							<div class="form-group">
+								<div class="col-lg-10 col-lg-offset-3">
+									<button class="btn btn-primary" type="submit">Submit</button>
+									<button class="btn btn-default">Cancel</button>
+								</div>
+							</div>
+						}
 					</div>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-4">
 					<div class="well">
-						@message
+						@sideBar(active)
 					</div>
 				</div>
 			</div>

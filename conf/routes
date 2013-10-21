@@ -3,7 +3,16 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /					                           	controllers.Application.index
+
+GET		/showTextValidationForm							controllers.Application.showTextValidationForm
+POST	/handleTextForm									controllers.Application.handleTextForm
+
+GET		/showNumberValidationForm						controllers.Application.showNumberValidationForm
+POST	/handleNumberForm								controllers.Application.handleNumberForm
+
+GET		/showDateValidationForm							controllers.Application.showDateValidationForm
+POST	/handleDateForm									controllers.Application.handleDateForm
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

@@ -1,0 +1,38 @@
+@(active: String, dateValidationForm: Form[(String, String)])(implicit flash: Flash)
+
+@import helper._
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("jQuery Form Validation") {
+	<div class="panel panel-success">
+		<div class="panel-heading">
+			<h3 class="panel-title">Form</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="well form-horizontal">
+						@helper.form(routes.Application.handleDateForm) {
+							<fieldset>
+								@inputText(dateValidationForm("dateValue"), args = 'class -> "form-control")
+								@inputText(dateValidationForm("dateISOValue"), args = 'class -> "form-control")
+							</fieldset>
+							<div class="form-group">
+								<div class="col-lg-10 col-lg-offset-3">
+									<button class="btn btn-primary" type="submit">Submit</button>
+									<button class="btn btn-default">Cancel</button>
+								</div>
+							</div>
+						}
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="well">
+						@sideBar(active)
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+}

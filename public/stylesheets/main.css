@@ -1,3 +1,10 @@
 body {
-    padding-top: 100px;
+    padding-top: 80px;
+}
+
+.required-field {
+	/* padding-left: 5px; */
+	font-size: 25px;
+	vertical-align: sub;
+	color: red;
 }

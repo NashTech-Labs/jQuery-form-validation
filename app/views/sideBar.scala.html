@@ -1,0 +1,13 @@
+@(active: String)
+<div class="list-group">
+	<a class="list-group-item @if(active == "Text") {active}" title="" id="" href="@routes.Application.showTextValidationForm()">
+		Text Validation
+	</a>
+	<a class="list-group-item @if(active == "Number") {active}" title="" id="" href="@routes.Application.showNumberValidationForm()">
+		Number Validation
+	</a>
+	<a class="list-group-item @if(active == "Date") {active}" title="" id="" href="@routes.Application.showDateValidationForm()">
+	 	Date Validation
+	</a>
+</div>
+

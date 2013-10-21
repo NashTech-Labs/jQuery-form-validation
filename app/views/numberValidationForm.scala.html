@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="well form-horizontal">
-						@helper.form(routes.Application.handleNumberForm) {
+						@helper.form(action = routes.Application.handleNumberForm, 'id -> "nunberValidationForm") {
 							<fieldset>
 								@inputText(nunberValidationForm("minValue"), args = 'class -> "form-control")
 								@inputText(nunberValidationForm("maxValue"), args = 'class -> "form-control")

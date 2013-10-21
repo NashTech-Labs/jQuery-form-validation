@@ -8,3 +8,8 @@ body {
 	vertical-align: sub;
 	color: red;
 }
+
+.error {
+	padding-top: 5px;
+	color: #b94a48;
+}

@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="well form-horizontal">
-						@helper.form(routes.Application.handleDateForm) {
+						@helper.form(action = routes.Application.handleDateForm, 'id -> "dateValidationForm") {
 							<fieldset>
 								@inputText(dateValidationForm("dateValue"), args = 'class -> "form-control")
 								@inputText(dateValidationForm("dateISOValue"), args = 'class -> "form-control")
@@ -34,5 +34,24 @@
 			</div>
 		</div>
 	</div>
+	
+	<script src="@routes.Assets.at("javascripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/additional-methods.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+    
+	    $( "#dateValidationForm" ).validate({
+	    	rules: {
+	    		dateValue: {
+	    			required: true,
+	    			date: true
+	    		},
+	    		dateISOValue: {
+	    			required: true,
+	    			dateISO: true
+	    		}
+	    	}
+	    });
+			
+	</script>
 
 }

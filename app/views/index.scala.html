@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="well form-horizontal">
-						@helper.form(routes.Application.handleTextForm) {
+						@helper.form(action = routes.Application.handleTextForm, 'id -> "textValidationForm") {
 							<fieldset>
 								@inputText(textValidationForm("required"), args = 'class -> "form-control")
 								@inputPassword(textValidationForm("password"), args = 'class -> "form-control")

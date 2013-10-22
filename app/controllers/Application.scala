@@ -57,7 +57,7 @@ object Application extends Controller {
       formWithErrors => BadRequest(views.html.index("Text", formWithErrors)),
       {
         case (name, dob, email, phone, website, userId, password, confPassword) =>
-          Redirect(routes.Application.index).flashing("SUCCESS" -> "Form submited successfuly")
+          Redirect(routes.Application.index).flashing("SUCCESS" -> "Form submited successfully")
       })
   }
   
@@ -66,7 +66,7 @@ object Application extends Controller {
       formWithErrors => BadRequest(views.html.numberValidationForm("Number", formWithErrors)),
       {
         case (minValue, maxValue, rangeValue, numberValue, digitsValue, creditCard) =>
-          Redirect(routes.Application.showNumberValidationForm).flashing("SUCCESS" -> "Form submited successfuly")
+          Redirect(routes.Application.showNumberValidationForm).flashing("SUCCESS" -> "Form submited successfully")
       })
   }
   
@@ -75,7 +75,7 @@ object Application extends Controller {
       formWithErrors => BadRequest(views.html.dateValidationForm("Date", formWithErrors)),
       {
         case (dateValue, dateISOValue) =>
-          Redirect(routes.Application.index).flashing("SUCCESS" -> "Form submited successfuly")
+          Redirect(routes.Application.index).flashing("SUCCESS" -> "Form submited successfully")
       })
   }
 

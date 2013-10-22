@@ -1,10 +1,9 @@
-required=Required
+name=Name
 password=Password
 confPassword=Confirm Password
-minlength=Min Length
-maxlength=Max Length
-rangelength=Range Length
 creditcard=Credit Card
-remote=Remote
+userId=User Id
 email=Email
-url=URL
+website=Web Site
+dob=Date Of Birth
+phone=Phone

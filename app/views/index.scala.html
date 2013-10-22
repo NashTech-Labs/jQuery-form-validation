@@ -1,4 +1,4 @@
-@(active: String, textValidationForm: Form[(String, String, String, String, String, String, String, String, String, String)])(implicit flash: Flash)
+@(active: String, textValidationForm: Form[(String, String, String, String, String, String, String, String)])(implicit flash: Flash)
 
 @import helper._
 @implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
@@ -14,16 +14,14 @@
 					<div class="well form-horizontal">
 						@helper.form(action = routes.Application.handleTextForm, 'id -> "textValidationForm") {
 							<fieldset>
-								@inputText(textValidationForm("required"), args = 'class -> "form-control")
+								@inputText(textValidationForm("name"), args = 'class -> "form-control")
+								@inputText(textValidationForm("dob"), args = 'class -> "form-control")
+								@inputText(textValidationForm("email"), args = 'class -> "form-control")
+								@inputText(textValidationForm("phone"), args = 'class -> "form-control")
+								@inputText(textValidationForm("website"), args = 'class -> "form-control")
+								@inputText(textValidationForm("userId"), args = 'class -> "form-control")
 								@inputPassword(textValidationForm("password"), args = 'class -> "form-control")
 								@inputPassword(textValidationForm("confPassword"), args = 'class -> "form-control")
-								@inputText(textValidationForm("minlength"), args = 'class -> "form-control")
-								@inputText(textValidationForm("maxlength"), args = 'class -> "form-control")
-								@inputText(textValidationForm("rangelength"), args = 'class -> "form-control")
-								@inputText(textValidationForm("creditcard"), args = 'class -> "form-control")
-								@inputText(textValidationForm("remote"), args = 'class -> "form-control")
-								@inputText(textValidationForm("email"), args = 'class -> "form-control")
-								@inputText(textValidationForm("url"), args = 'class -> "form-control")
 							</fieldset>
 							<div class="form-group">
 								<div class="col-lg-10 col-lg-offset-3">
@@ -42,5 +40,48 @@
 			</div>
 		</div>
 	</div>
+	
+	<script src="@routes.Assets.at("javascripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/additional-methods.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+    
+	    $( "#textValidationForm" ).validate({
+	    	rules: {
+	    		name: {
+	    			required: true
+	    		},
+	    		dob: {
+	    			required: true,
+	    			date: true
+	    		},
+	    		email: {
+	    			required: true,
+	    			email: true
+	    		},
+	    		phone: {
+	    			required: true,
+	    			phoneUS: true
+	    		},
+	    		website: {
+	    			required: true,
+	    			url: true
+	    		},
+	    		userId: {
+	    			required: true,
+	    			minlength: 8,
+	    			maxlength: 16
+	    		},
+	    		password: {
+	    			required: true,
+	    			minlength: 8
+	    		},
+	    		confPassword: {
+	    			required: true,
+	    			equalTo: "#password"
+	    		}
+	    	}
+	    });
+			
+	</script>
 
 }

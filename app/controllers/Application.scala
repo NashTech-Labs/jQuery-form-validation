@@ -13,16 +13,14 @@ object Application extends Controller {
 
   val textValidationForm = Form(
     tuple(
-      "required" -> nonEmptyText,
-      "password" -> nonEmptyText,
-      "confPassword" -> nonEmptyText,
-      "minlength" -> nonEmptyText,
-      "maxlength" -> nonEmptyText,
-      "rangelength" -> nonEmptyText,
-      "creditcard" -> nonEmptyText,
-      "remote" -> nonEmptyText,
+      "name" -> nonEmptyText,
+      "dob" -> nonEmptyText,
       "email" -> email,
-      "url" -> nonEmptyText))
+      "phone" -> nonEmptyText,
+      "website" -> nonEmptyText,
+      "userId" -> nonEmptyText,
+      "password" -> nonEmptyText,
+      "confPassword" -> nonEmptyText))
 
   val dateValidationForm = Form(
     tuple(
@@ -58,7 +56,7 @@ object Application extends Controller {
     textValidationForm.bindFromRequest.fold(
       formWithErrors => BadRequest(views.html.index("Text", formWithErrors)),
       {
-        case (required, password, confPassword, minlength, maxlength, rangelength, creditcard, remote, email, url) =>
+        case (name, dob, email, phone, website, userId, password, confPassword) =>
           Redirect(routes.Application.index).flashing("SUCCESS" -> "Form submited successfuly")
       })
   }

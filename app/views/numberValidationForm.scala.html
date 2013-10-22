@@ -19,7 +19,7 @@
 								@inputText(nunberValidationForm("rangeValue"), args = 'class -> "form-control")
 								@inputText(nunberValidationForm("numberValue"), args = 'class -> "form-control")
 								@inputText(nunberValidationForm("digitsValue"), args = 'class -> "form-control")
-								@inputText(nunberValidationForm("phoneUS"), args = 'class -> "form-control")
+								@inputText(nunberValidationForm("creditCard"), args = 'class -> "form-control")
 							</fieldset>
 							<div class="form-group">
 								<div class="col-lg-10 col-lg-offset-3">
@@ -38,5 +38,43 @@
 			</div>
 		</div>
 	</div>
+	
+	<script src="@routes.Assets.at("javascripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/additional-methods.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+    
+	    $( "#nunberValidationForm" ).validate({
+	    	rules: {
+	    		minValue: {
+	    			required: true,
+	    			number: true,
+	    			min: 100
+	    		},
+	    		maxValue: {
+	    			required: true,
+	    			number: true,
+	    			max: 10000
+	    		},
+	    		rangeValue: {
+	    			required: true,
+	    			number: true,
+	    			range: [100, 10000]
+	    		},
+	    		numberValue: {
+	    			required: true,
+	    			number: true
+	    		},
+	    		digitsValue: {
+	    			required: true,
+	    			digits: true
+	    		},
+	    		creditCard: {
+	    			required: true,
+	    			creditcard: true
+	    		}
+	    	}
+	    });
+			
+	</script>
 
 }

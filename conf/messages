@@ -7,3 +7,13 @@ email=Email
 website=Web Site
 dob=Date Of Birth
 phone=Phone
+
+dateValue=Date
+dateISOValue=Date(ISO)
+
+minValue=Minimum Value
+maxValue=Maximum Value
+rangeValue=Range Value
+numberValue=Numeric Value
+digitsValue=Digits Value
+creditCard=Credit Card Number

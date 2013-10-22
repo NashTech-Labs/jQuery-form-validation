@@ -34,7 +34,7 @@ object Application extends Controller {
       "rangeValue" -> number,
       "numberValue" -> number,
       "digitsValue" -> number,
-      "phoneUS" -> nonEmptyText))
+      "creditCard" -> nonEmptyText))
 
   def index = Action { implicit request =>
     Ok(views.html.index("Text", textValidationForm))
@@ -65,7 +65,7 @@ object Application extends Controller {
     numberValidationForm.bindFromRequest.fold(
       formWithErrors => BadRequest(views.html.numberValidationForm("Number", formWithErrors)),
       {
-        case (minValue, maxValue, rangeValue, numberValue, digitsValue, phoneUS) =>
+        case (minValue, maxValue, rangeValue, numberValue, digitsValue, creditCard) =>
           Redirect(routes.Application.showNumberValidationForm).flashing("SUCCESS" -> "Form submited successfuly")
       })
   }

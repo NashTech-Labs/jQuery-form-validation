@@ -12,8 +12,8 @@ Form validation with jQuery in Play Framework
 ###Instructions that detail how the project is compiled, deployed and used :-
 -----------------------------------------------------------------------
 
-- The live application is currently hosted at : http://jqueryformvalidation.herokuapp.com/
-- The Github code for the project is at : https://github.com/anandknoldus/jQueryFormValidation
+* The live application is currently hosted at : http://jqueryformvalidation.herokuapp.com/
+* The Github code for the project is at : https://github.com/knoldus/jQuery-form-validation
 -----------------------------------------------------------------------
 
 * Clone the project into local system

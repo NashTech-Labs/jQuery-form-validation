@@ -4,6 +4,19 @@
 @implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
 
 @main("jQuery Form Validation") {
+	<div class="row">
+		@flash.get("ERROR").map { message =>
+			<div class="alert alert-dismissable alert-danger">
+				<strong>@message</strong>
+			</div>
+		}
+		
+		@flash.get("SUCCESS").map { message =>
+			<div class="alert alert-dismissable alert-success">
+				<strong>@message</strong>
+			</div>
+		}
+	</div>
 	<div class="panel panel-success">
 		<div class="panel-heading">
 			<h3 class="panel-title">Form</h3>

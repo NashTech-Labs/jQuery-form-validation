@@ -1,4 +1,4 @@
-##Project Description [jQueryFormValidation](http://jqueryformvalidation.herokuapp.com/)
+[jQueryFormValidation](http://jqueryformvalidation.herokuapp.com/)
 ==================================
 
 Form validation with jQuery in PlayFramework
